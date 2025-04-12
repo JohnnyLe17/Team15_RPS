@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<HTML lang="en">
+<html lang="en">
 <head>
     <title>Health and Wellness</title>
     <link rel="stylesheet" type="text/css" href="../static/index.css">
 </head>    
-</HTML>
 
 <body>
     <div class="top box">
@@ -27,17 +26,20 @@
         <span class="dot"></span>
     </div>
     <div class="bottom box">
-    {% if gyms %}
-        <h2>Overview:</h2>
+        {% if exercises %}
+        <h2>Exercise List</h2>
         <ul>
-            {% for gym in gyms %}
+            {% for gym in exercises %}
             <li>
                 <strong>{{ gym['name'] }}</strong><br>
-                <em>{{ gym['muscle'] }}</em><br>
-                <em>{{ gym['equipment'] }}</em><br>
-                <em>{{ gym['difficulty'] }}</em><br>
+                <em>Muscle: {{ gym['muscle'] }}</em><br>
+                <em>Equipment: {{ gym['equipment'] }}</em><br>
+                <em>Difficulty: {{ gym['difficulty'] }}</em><br>
             </li>
-            {%}
+            {% endfor %}
         </ul>
+        {% endif %}
     </div>
 </body>
+
+</html>
