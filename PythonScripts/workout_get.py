@@ -11,7 +11,7 @@ def getExersise(muscle):
     response = requests.get(api_url, headers={'X-Api-Key': 'UQ2Yik3ehsLPHsxxAWCH1w==eisXGbJaZOjddRb5'})
     results = json.loads(response.text)
     if results:
-        print (results[0]["name"])
+        return results
 
 def getImage(pic):
     image_links = []
