@@ -3,8 +3,6 @@
 <head>
     <title>Health and Wellness</title>
     <link rel="stylesheet" type="text/css" href="../static/index.css">
-    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 </head>    
 </HTML>
 
@@ -13,11 +11,12 @@
         <h1>GYM HUB</h1>
     </div>
     <div class="box 1">
-        <py-script>
-        groups = {"Abdominals", "Abductors", "Adductors", "Biceps", "Calves", "Chest", "Forearms", "Glutes", "Hamstrings", "Lats", "Lower Back", "Middle Back", "Neck", "Quadriceps", "Traps", "Triceps"}
-        for group in groups:
-        echo ("<span class='dot'>" + group + "</span>")
-        </py-script>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
     </div>
     <div class="box 2">
         <span class="dot"></span>
@@ -27,5 +26,18 @@
         <span class="dot"></span>
         <span class="dot"></span>
     </div>
-    <div class="bottom box">Bottom Div</div>
+    <div class="bottom box">
+    {% if gyms %}
+        <h2>Overview:</h2>
+        <ul>
+            {% for gym in gyms %}
+            <li>
+                <strong>{{ gym['name'] }}</strong><br>
+                <em>{{ gym['muscle'] }}</em><br>
+                <em>{{ gym['equipment'] }}</em><br>
+                <em>{{ gym['difficulty'] }}</em><br>
+            </li>
+            {%}
+        </ul>
+    </div>
 </body>
